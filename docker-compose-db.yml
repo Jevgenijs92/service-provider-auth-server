@@ -1,0 +1,20 @@
+# docker compose -f docker-compose-db.yml up -d
+version: '3.8'
+
+services:
+  database:
+    container_name: auth-server-db
+    image: 'postgres:latest'
+    restart: always
+    environment:
+      - POSTGRES_DB=auth-server
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root_password
+    ports:
+      - "5432:5432"
+#    networks:
+#      - backend-network-level-1
+#
+#networks:
+#  backend-network-level-1:
+#    driver: bridge
