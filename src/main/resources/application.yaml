@@ -1,0 +1,29 @@
+logging:
+  level:
+    root: INFO
+    org.springframework.security: TRACE
+    org.springframework.security.oauth2: TRACE
+
+# Public client
+spring:
+  security:
+    oauth2:
+      authorizationserver:
+        client:
+          public-client:
+            registration:
+              client-id: "public-client"
+              client-authentication-methods:
+                - "none"
+              authorization-grant-types:
+                - "authorization_code"
+                - "refresh_token"
+              redirect-uris:
+                - "http://localhost:4200"
+              scopes:
+                - "openid"
+                - "profile"
+              post-logout-redirect-uris:
+                - "http://localhost:4200"
+            require-authorization-consent: true
+            require-proof-key: true
