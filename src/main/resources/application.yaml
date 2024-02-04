@@ -22,6 +22,8 @@ spring:
               scopes:
                 - "openid"
                 - "profile"
+                - "read"
+                - "write"
               post-logout-redirect-uris:
                 - "http://localhost:4200"
             require-authorization-consent: true
