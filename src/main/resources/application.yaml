@@ -3,6 +3,12 @@ logging:
     root: INFO
     org.springframework.security: INFO
 
+jwt:
+  key:
+    public: classpath:public_key.pem
+    private: classpath:private_key.pem
+    id: auth-server
+
 # Public client
 spring:
   security:
