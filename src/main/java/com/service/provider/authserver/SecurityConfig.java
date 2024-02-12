@@ -89,17 +89,6 @@ public class SecurityConfig {
         return source;
     }
 
-    @Bean
-    public UserDetailsService userDetailsService() {
-        UserDetails userDetails = User.builder()
-                .username("user")
-                .password(passwordEncoder().encode("password"))
-                .roles("USER")
-                .build();
-
-        return new InMemoryUserDetailsManager(userDetails);
-    }
-
     // This is the in-memory client registration for OAuth2 OpenID Client
 //    @Bean
 //    public RegisteredClientRepository registeredClientRepository() {
