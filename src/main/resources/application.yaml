@@ -11,6 +11,13 @@ jwt:
 
 # Public client
 spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth-server
+    username: root
+    password: root_password
   security:
     oauth2:
       client:
